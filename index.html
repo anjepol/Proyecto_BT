@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adekyu01 | Streamer de Juegos Indie y Retro</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: Press Start 2P (Pixelada) y Inter (Moderna) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+
+    <!-- Estilos personalizados -->
+    <style>
+        /* --- Definición de Keyframes para el Carrusel --- */
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(-250px * 6)); } /* 250px es el ancho de la imagen, 6 es el número de imágenes */
+        }
+
+        /* --- Estilos Generales --- */
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #110E1B;
+            /* Fondo sutil de matriz de puntos */
+            background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.05) 1px, transparent 0);
+            background-size: 20px 20px;
+        }
+        .font-pixel {
+            font-family: 'Press Start 2P', cursive;
+        }
+        .text-glow {
+            text-shadow: 0 0 8px rgba(192, 132, 252, 0.6), 0 0 20px rgba(192, 132, 252, 0.4);
+        }
+        
+        /* --- Estilos de Tarjetas y Botones --- */
+        .card-border-glow {
+            position: relative;
+            border: 2px solid transparent;
+            background-clip: padding-box;
+            transition: transform 0.3s ease;
+        }
+        .card-border-glow:hover {
+            transform: translateY(-5px);
+        }
+        .card-border-glow::before {
+            content: '';
+            position: absolute;
+            top: 0; right: 0; bottom: 0; left: 0;
+            z-index: -1;
+            margin: -2px;
+            border-radius: inherit;
+            background: linear-gradient(to right, #c084fc, #818cf8);
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+        .card-border-glow:hover::before {
+            opacity: 1;
+        }
+        .neon-button {
+            box-shadow: 0 0 5px #c084fc, 0 0 15px #c084fc, 0 0 25px #c084fc;
+            transition: all 0.3s ease;
+        }
+        .neon-button:hover {
+            box-shadow: 0 0 10px #e9d5ff, 0 0 25px #e9d5ff, 0 0 50px #e9d5ff;
+        }
+
+        /* --- Estilos del Carrusel Automático --- */
+        .carousel-container {
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+            padding: 2rem 0;
+            mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+        }
+        .carousel-track {
+            display: flex;
+            width: calc(250px * 12); /* Doble de imágenes para el bucle infinito */
+            animation: scroll 40s linear infinite;
+        }
+        .carousel-container:hover .carousel-track {
+            animation-play-state: paused;
+        }
+        .carousel-slide {
+            width: 250px;
+            height: 180px;
+            margin: 0 10px;
+            flex-shrink: 0;
+        }
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 0.5rem;
+            transition: transform 0.3s ease;
+        }
+        .carousel-slide:hover img {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="text-gray-200">
+
+    <!-- Header -->
+    <header class="bg-black/30 backdrop-blur-sm fixed top-0 left-0 right-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="font-pixel text-lg md:text-xl text-purple-400 text-glow">Adekyu01</a>
+            <nav class="hidden md:flex space-x-6 items-center text-sm uppercase">
+                 <a href="#sobre-mi" class="hover:text-purple-400 transition-colors">Sobre Mí</a>
+                 <a href="#videos" class="hover:text-purple-400 transition-colors">Videos</a>
+                 <a href="#galeria" class="hover:text-purple-400 transition-colors">Galería</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Sección Héroe -->
+        <section class="min-h-screen flex items-center justify-center text-center pt-16">
+            <div class="container mx-auto px-6">
+                <h1 class="font-pixel text-3xl md:text-5xl text-white text-glow uppercase leading-tight">
+                    La nostalgia <br> <span class="text-purple-400">vuelve a la vida</span>
+                </h1>
+                <p class="text-gray-300 mt-6 max-w-2xl mx-auto text-lg">
+                    Un rincón para revivir la época dorada de los videojuegos. Sin guiones, solo pura diversión con los mejores títulos indies y retro.
+                </p>
+                <a href="https://www.twitch.tv/adekyu01?sr=a" target="_blank" class="mt-10 inline-block bg-purple-600 text-white font-pixel py-3 px-6 rounded-lg uppercase tracking-wider transition-transform transform hover:scale-105 neon-button text-sm">
+                    Ver en vivo
+                </a>
+            </div>
+        </section>
+
+        <!-- Sobre Mí -->
+        <section id="sobre-mi" class="py-20 bg-black/20">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="font-pixel text-2xl md:text-3xl text-purple-400 text-glow mb-4">SOBRE EL CANAL</h2>
+                <div class="flex justify-center">
+                    <div class="w-24 h-1 bg-yellow-400 rounded-full"></div>
+                </div>
+                <p class="mt-8 max-w-3xl mx-auto text-lg leading-relaxed text-gray-300">
+                    Mi canal está dedicado a los videojuegos, principalmente los indies y juegos retro. Busco un enfoque "nostálgico" en el que se reviva un poco esa época dorada de YouTube, cuando todo era tan simple como encender la cámara y ponerse a grabar sin un guion. Es un espacio para la autenticidad, para redescubrir joyas olvidadas y explorar nuevas propuestas con el espíritu de antes.
+                </p>
+            </div>
+        </section>
+
+        <!-- Videos Destacados -->
+        <section id="videos" class="py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="font-pixel text-2xl md:text-3xl text-center text-purple-400 text-glow mb-12">VIDEOS DESTACADOS</h2>
+                <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <a href="https://youtu.be/MnVgOWll7Bo" target="_blank" class="block bg-slate-800/50 rounded-lg overflow-hidden card-border-glow group">
+                        <img src="https://img.youtube.com/vi/MnVgOWll7Bo/hqdefault.jpg" alt="Miniatura de gameplay de terror" class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="p-6">
+                            <h3 class="font-pixel text-lg text-white mb-2">Gameplay de pelos</h3>
+                            <p class="text-gray-400 text-sm">Enojos?, gritos? y mucha diversión en este increíble juego. ¿Lograré ganar?</p>
+                        </div>
+                    </a>
+                    <a href="https://youtube.com/shorts/e-zP9Omt65Y" target="_blank" class="block bg-slate-800/50 rounded-lg overflow-hidden card-border-glow group">
+                         <img src="https://img.youtube.com/vi/e-zP9Omt65Y/hqdefault.jpg" alt="Miniatura de un Short de YouTube" class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="p-6">
+                            <h3 class="font-pixel text-lg text-white mb-2">Humillado en Valorant</h3>
+                            <p class="text-gray-400 text-sm">Un clip corto pero intenso. A todos nos ha pasado alguna vez.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Galería -->
+        <section id="galeria" class="py-20 bg-black/20">
+             <div class="container mx-auto px-6">
+                <h2 class="font-pixel text-2xl md:text-3xl text-center text-purple-400 text-glow mb-12">GALERÍA</h2>
+                <div class="carousel-container">
+                    <div class="carousel-track">
+                        <!-- Imágenes Originales -->
+                        <div class="carousel-slide"><img src="imagen 1.png" alt="Imagen de la galería 1"></div>
+                        <div class="carousel-slide"><img src="imagen 2.png" alt="Imagen de la galería 2"></div>
+                        <div class="carousel-slide"><img src="imagen 3.png" alt="Imagen de la galería 3"></div>
+                        <div class="carousel-slide"><img src="imagen 4.png" alt="Imagen de la galería 4"></div>
+                        <div class="carousel-slide"><img src="imagen 5.png" alt="Imagen de la galería 5"></div>
+                        <div class="carousel-slide"><img src="imagen 6.png" alt="Imagen de la galería 6"></div>
+                        <!-- Imágenes Duplicadas para el bucle -->
+                        <div class="carousel-slide"><img src="imagen 1.png" alt="Imagen de la galería 1"></div>
+                        <div class="carousel-slide"><img src="https://placehold.co/500x360/1e1b4b/c084fc?text=Setup" alt="Imagen de la galería 2"></div>
+                        <div class="carousel-slide"><img src="imagen 1.png" alt="Imagen de la galería 3"></div>
+                        <div class="carousel-slide"><img src="imagen 1.png" alt="Imagen de la galería 4"></div>
+                        <div class="carousel-slide"><img src="imagen 1.png" alt="Imagen de la galería 5"></div>
+                        <div class="carousel-slide"><img src="imagen 1.png" alt="Imagen de la galería 6"></div>
+                    </div>
+                </div>
+             </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="bg-black/50 py-12">
+        <div class="container mx-auto px-6 text-center">
+            <h3 class="font-pixel text-xl text-white mb-6">SIGUE LA AVENTURA</h3>
+            <div class="flex justify-center items-center space-x-6">
+                <a href="https://instagram.com/Adekyu01" target="_blank" class="text-gray-300 hover:text-purple-400 transition-all duration-300 transform hover:scale-125" aria-label="Instagram">
+                    <svg class="h-8 w-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c-4.198 0-5.5.01-7.437.07-1.933.06-3.264.33-4.414 1.48-1.15 1.15-1.42 2.48-1.48 4.414C.01 9.815 0 11.118 0 15.315s.01 5.5.07 7.437c.06 1.933.33 3.264 1.48 4.414 1.15 1.15 2.48 1.42 4.414 1.48 1.937.06 3.24.07 7.437.07s5.5-.01 7.437-.07c1.933-.06 3.264-.33 4.414-1.48 1.15-1.15 1.42 2.48 1.48-4.414.06-1.937.07-3.24.07-7.437s-.01-5.5-.07-7.437c-.06-1.933-.33-3.264-1.48-4.414-1.15-1.15-2.48-1.42-4.414-1.48C17.815 2.01 16.512 2 12.315 2zm0 1.94c4.113 0 5.353.016 7.237.068 1.632.05 2.43.32 2.96.86.53.53.81 1.328.86 2.96.052 1.884.068 3.124.068 7.237s-.016 5.353-.068 7.237c-.05 1.632-.32 2.43-.86 2.96-.53.53-1.328.81-2.96.86-1.884.052-3.124.068-7.237.068s-5.353-.016-7.237-.068c-1.632-.05-2.43-.32-2.96-.86-.53-.53-.81-1.328-.86-2.96C2.026 17.69 2.01 16.45 2.01 12.315s.016-5.353.068-7.237c.05-1.632.32-2.43.86-2.96.53-.53 1.328-.81 2.96-.86C7.81 3.956 9.05 3.94 12.315 3.94zm0 4.215c-2.43 0-4.395 1.965-4.395 4.395s1.965 4.395 4.395 4.395 4.395-1.965 4.395-4.395-1.965-4.395-4.395-4.395zm0 6.945c-1.41 0-2.55-1.14-2.55-2.55s1.14-2.55 2.55-2.55 2.55 1.14 2.55 2.55-1.14 2.55-2.55 2.55zm4.815-6.93a1.02 1.02 0 110 2.04 1.02 1.02 0 010-2.04z" clip-rule="evenodd" /></svg>
+                </a>
+                <a href="https://youtube.com/@adekyu01" target="_blank" class="text-gray-300 hover:text-purple-400 transition-all duration-300 transform hover:scale-125" aria-label="YouTube">
+                    <svg class="h-8 w-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M19.822 5.432a2.38 2.38 0 00-1.666-1.666C16.632 3.5 12 3.5 12 3.5s-4.632 0-6.156.266a2.38 2.38 0 00-1.666 1.666C4 6.956 4 12 4 12s0 5.044.266 6.568a2.38 2.38 0 001.666 1.666C7.368 20.5 12 20.5 12 20.5s4.632 0 6.156-.266a2.38 2.38 0 001.666-1.666C20 17.044 20 12 20 12s0-5.044-.178-6.568zM9.544 15.5V8.5l6.322 3.5-6.322 3.5z" clip-rule="evenodd" /></svg>
+                </a>
+                <a href="https://www.twitch.tv/adekyu01?sr=a" target="_blank" class="text-gray-300 hover:text-purple-400 transition-all duration-300 transform hover:scale-125" aria-label="Twitch">
+                    <svg class="h-8 w-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M11.571 4.714h1.715v5.143H11.57zM15.714 4.714h1.714v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0H6zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714v9.429z" /></svg>
+                </a>
+            </div>
+             <p class="text-gray-500 mt-8 text-sm">&copy; 2024 Adekyu01. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
+
+

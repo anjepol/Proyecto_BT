@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Adekyu01</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: Press Start 2P y Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+
+    <!-- Estilos personalizados -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #110E1B;
+            /* Fondo sutil de matriz de puntos */
+            background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.05) 1px, transparent 0);
+            background-size: 20px 20px;
+        }
+        .font-pixel {
+            font-family: 'Press Start 2P', cursive;
+        }
+        .text-glow {
+            text-shadow: 0 0 8px rgba(192, 132, 252, 0.6), 0 0 20px rgba(192, 132, 252, 0.4);
+        }
+    </style>
+</head>
+<body class="text-gray-200">
+
+    <!-- Header -->
+    <header class="bg-black/30 backdrop-blur-sm sticky top-0 left-0 right-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="font-pixel text-lg md:text-xl text-purple-400 text-glow">Adekyu01</a>
+            <nav>
+                 <a href="index.html" class="text-sm uppercase hover:text-purple-400 transition-colors">&larr; Volver al inicio</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="py-16 md:py-24">
+        <div class="container mx-auto px-6">
+            <h1 class="font-pixel text-3xl md:text-5xl text-center text-white text-glow uppercase">
+                Bitácora del Jugador
+            </h1>
+            <p class="text-gray-300 mt-6 max-w-2xl mx-auto text-lg text-center">
+                Reflexiones, guías y anécdotas del universo indie y retro.
+            </p>
+
+            <!-- Contenedor de Artículos -->
+            <div class="mt-16 max-w-4xl mx-auto space-y-12">
+                
+                <!-- Artículo 1 -->
+                <article class="bg-slate-800/50 p-6 md:p-8 rounded-lg border-l-4 border-purple-400">
+                    <header>
+                        <time class="text-sm text-gray-400">15 de Julio, 2024</time>
+                        <h2 class="font-pixel text-2xl text-white mt-2">
+                            La Magia Oculta de Stardew Valley
+                        </h2>
+                    </header>
+                    <div class="text-gray-300 mt-4 leading-relaxed space-y-4">
+                        <p>
+                            Stardew Valley es más que un simple simulador de granja. Es un refugio, una lección sobre la paciencia y la recompensa del trabajo duro. Cada estación trae consigo nuevos desafíos y descubrimientos, pero la verdadera magia reside en los pequeños detalles: la relación con los aldeanos, el misterio de las minas y la libertad de crear tu propio paraíso.
+                        </p>
+                        <p>
+                            En este post, exploramos por qué, años después de su lanzamiento, este juego sigue capturando corazones y ofreciendo cientos de horas de contenido significativo sin pedir nada a cambio.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Artículo 2 -->
+                <article class="bg-slate-800/50 p-6 md:p-8 rounded-lg border-l-4 border-yellow-400">
+                    <header>
+                        <time class="text-sm text-gray-400">02 de Julio, 2024</time>
+                        <h2 class="font-pixel text-2xl text-white mt-2">
+                           Joyas Retro que Merecen un Remake
+                        </h2>
+                    </header>
+                    <div class="text-gray-300 mt-4 leading-relaxed space-y-4">
+                        <p>
+                           La nostalgia es poderosa, pero ¿qué pasaría si pudiéramos revivir algunos clásicos con las tecnologías de hoy? No hablo de simples remasterizaciones, sino de remakes completos que respeten la esencia original mientras expanden su universo. Juegos como Chrono Trigger o un Silent Hill bien ejecutado podrían ser experiencias transformadoras para una nueva generación.
+                        </p>
+                        <p>
+                           Aquí te presento mi lista personal de 5 títulos de la era de los 16 y 32 bits que, en mi opinión, tienen el potencial de convertirse en obras maestras modernas si cayeran en las manos correctas.
+                        </p>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="bg-black/50 py-12 mt-16">
+        <div class="container mx-auto px-6 text-center">
+            <h3 class="font-pixel text-xl text-white mb-6">SIGUE LA AVENTURA</h3>
+            <div class="flex justify-center items-center space-x-6">
+                <a href="https://instagram.com/Adekyu01" target="_blank" class="text-gray-300 hover:text-purple-400 transition-all duration-300 transform hover:scale-125" aria-label="Instagram">
+                    <svg class="h-8 w-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c-4.198 0-5.5.01-7.437.07-1.933.06-3.264.33-4.414 1.48-1.15 1.15-1.42 2.48-1.48 4.414C.01 9.815 0 11.118 0 15.315s.01 5.5.07 7.437c.06 1.933.33 3.264 1.48 4.414 1.15 1.15 2.48 1.42 4.414 1.48 1.937.06 3.24.07 7.437.07s5.5-.01 7.437-.07c1.933-.06 3.264-.33 4.414-1.48 1.15-1.15 1.42 2.48 1.48-4.414.06-1.937.07-3.24.07-7.437s-.01-5.5-.07-7.437c-.06-1.933-.33-3.264-1.48-4.414-1.15-1.15-2.48-1.42-4.414-1.48C17.815 2.01 16.512 2 12.315 2zm0 1.94c4.113 0 5.353.016 7.237.068 1.632.05 2.43.32 2.96.86.53.53.81 1.328.86 2.96.052 1.884.068 3.124.068 7.237s-.016 5.353-.068 7.237c-.05 1.632-.32 2.43-.86 2.96-.53.53-1.328.81-2.96.86-1.884.052-3.124.068-7.237.068s-5.353-.016-7.237-.068c-1.632-.05-2.43-.32-2.96-.86-.53-.53-.81-1.328-.86-2.96C2.026 17.69 2.01 16.45 2.01 12.315s.016-5.353.068-7.237c.05-1.632.32-2.43.86-2.96.53-.53 1.328.81 2.96-.86C7.81 3.956 9.05 3.94 12.315 3.94zm0 4.215c-2.43 0-4.395 1.965-4.395 4.395s1.965 4.395 4.395 4.395 4.395-1.965 4.395-4.395-1.965-4.395-4.395-4.395zm0 6.945c-1.41 0-2.55-1.14-2.55-2.55s1.14-2.55 2.55-2.55 2.55 1.14 2.55 2.55-1.14 2.55-2.55 2.55zm4.815-6.93a1.02 1.02 0 110 2.04 1.02 1.02 0 010-2.04z" clip-rule="evenodd" /></svg>
+                </a>
+                <a href="https://youtube.com/@adekyu01" target="_blank" class="text-gray-300 hover:text-purple-400 transition-all duration-300 transform hover:scale-125" aria-label="YouTube">
+                    <svg class="h-8 w-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M19.822 5.432a2.38 2.38 0 00-1.666-1.666C16.632 3.5 12 3.5 12 3.5s-4.632 0-6.156.266a2.38 2.38 0 00-1.666 1.666C4 6.956 4 12 4 12s0 5.044.266 6.568a2.38 2.38 0 001.666 1.666C7.368 20.5 12 20.5 12 20.5s4.632 0 6.156-.266a2.38 2.38 0 001.666-1.666C20 17.044 20 12 20 12s0-5.044-.178-6.568zM9.544 15.5V8.5l6.322 3.5-6.322 3.5z" clip-rule="evenodd" /></svg>
+                </a>
+                <a href="https://www.twitch.tv/adekyu01?sr=a" target="_blank" class="text-gray-300 hover:text-purple-400 transition-all duration-300 transform hover:scale-125" aria-label="Twitch">
+                    <svg class="h-8 w-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M11.571 4.714h1.715v5.143H11.57zM15.714 4.714h1.714v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0H6zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714v9.429z" /></svg>
+                </a>
+            </div>
+             <p class="text-gray-500 mt-8 text-sm">&copy; 2024 Adekyu01. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
+
