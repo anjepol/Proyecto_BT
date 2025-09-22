@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizzeria Clais - Calidad y Sabor en Grajales</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter (cuerpo) y Pacifico (títulos amigables) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Pacifico&display=swap" rel="stylesheet">
+    
+    <!-- Iconos (Lucide Icons) -->
+    <script src="https://unpkg.com/lucide-react@latest/dist/lucide-react.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        /* Estilos personalizados para fuentes, colores y animaciones */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FEFBF6; /* Un tono crema aún más cálido */
+            color: #4A2E2A; /* Marrón oscuro para el texto, más suave que el negro */
+        }
+        /* La fuente 'Pacifico' le da un toque amigable y artesanal a los títulos */
+        h1, h2, h3, .font-handwriting {
+            font-family: 'Pacifico', cursive;
+        }
+        /* Animación para aparecer al hacer scroll */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header y Navegación -->
+    <header class="bg-white/90 backdrop-blur-md shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-3xl text-red-600 font-handwriting">Pizzeria Clais</a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#inicio" class="text-gray-700 hover:text-red-600 transition duration-300">Inicio</a>
+                <a href="#nosotros" class="text-gray-700 hover:text-red-600 transition duration-300">Nosotros</a>
+                <a href="#menu" class="text-gray-700 hover:text-red-600 transition duration-300">Menú</a>
+                <a href="#contacto" class="text-gray-700 hover:text-red-600 transition duration-300">Contacto</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden text-gray-700">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+            </button>
+        </div>
+        <!-- Menú Móvil -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white">
+            <a href="#inicio" class="block py-2 px-6 text-sm hover:bg-red-50">Inicio</a>
+            <a href="#nosotros" class="block py-2 px-6 text-sm hover:bg-red-50">Nosotros</a>
+            <a href="#menu" class="block py-2 px-6 text-sm hover:bg-red-50">Menú</a>
+            <a href="#contacto" class="block py-2 px-6 text-sm hover:bg-red-50">Contacto</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Sección de Inicio (Hero) -->
+        <section id="inicio" class="relative h-[60vh] md:h-[85vh] bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1574071318508-1cdbab80d002?q=80&w=2069&auto=format&fit=crop');">
+            <div class="absolute inset-0 bg-black/40"></div>
+            <div class="relative z-10 flex flex-col items-center justify-center h-full text-white text-center px-4">
+                <h1 class="text-5xl md:text-8xl font-extrabold reveal">Horneamos Felicidad</h1>
+                <p class="mt-4 text-lg md:text-xl max-w-2xl reveal" style="transition-delay: 200ms;">La pizza más rica de Rafael Lara Grajales, hecha con una pizca de amor.</p>
+                <a href="#menu" class="mt-8 bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105 shadow-lg reveal" style="transition-delay: 400ms;">Descubre el Sabor</a>
+            </div>
+        </section>
+
+        <!-- Sección Nosotros -->
+        <section id="nosotros" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16 reveal">
+                    <h2 class="text-5xl text-red-600">Nuestra Pequeña Historia</h2>
+                    <p class="mt-4 text-gray-600 max-w-3xl mx-auto">Pizzeria Clais nació de un sueño: compartir el sabor de hogar con nuestra comunidad. No somos solo una pizzería, somos una familia que pone el corazón en la masa para que cada rebanada te haga sonreír. Para nosotros, la calidad no es un ingrediente, es la receta completa.</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10 items-center">
+                    <div class="text-center reveal" style="transition-delay: 100ms;">
+                        <div class="bg-amber-500 text-white w-24 h-24 mx-auto rounded-full flex items-center justify-center mb-4 shadow-md">
+                            <i data-lucide="heart-handshake" class="w-12 h-12"></i>
+                        </div>
+                        <h3 class="text-2xl mb-2">Con Cariño</h3>
+                        <p class="text-gray-600">Cada pizza se prepara como si fuera para nuestra propia mesa.</p>
+                    </div>
+                    <div class="lg:col-span-1 md:col-span-2 reveal">
+                         <img src="https://images.unsplash.com/photo-1594007654729-407eedc4be65?q=80&w=1928&auto=format&fit=crop" alt="Pizza recién hecha" class="rounded-2xl shadow-xl w-full h-auto object-cover transform hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="text-center reveal" style="transition-delay: 300ms;">
+                        <div class="bg-amber-500 text-white w-24 h-24 mx-auto rounded-full flex items-center justify-center mb-4 shadow-md">
+                            <i data-lucide="smile" class="w-12 h-12"></i>
+                        </div>
+                        <h3 class="text-2xl mb-2">Para ti</h3>
+                        <p class="text-gray-600">Queremos ser parte de tus mejores momentos y recuerdos.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Menú y Horarios -->
+        <section id="menu" class="py-20">
+            <div class="container mx-auto px-6">
+                 <div class="text-center mb-12 reveal">
+                    <h2 class="text-5xl text-red-600">Nuestras Creaciones</h2>
+                    <p class="mt-4 text-gray-600 max-w-3xl mx-auto">Pizzas que enamoran y antojos que no puedes dejar pasar.</p>
+                </div>
+                 <h3 class="text-3xl text-center mb-8 reveal">Pizzas de la Casa</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Producto 1 -->
+                    <div class="bg-white rounded-2xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 reveal">
+                        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=1981&auto=format&fit=crop" alt="Pizza de Pepperoni" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-amber-600">La Clásica</h3>
+                            <p class="mt-2 text-gray-600">Pepperoni de primera calidad y queso mozzarella derretido a la perfección.</p>
+                        </div>
+                    </div>
+                    <!-- Producto 2 -->
+                    <div class="bg-white rounded-2xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 reveal" style="transition-delay: 150ms;">
+                        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=1981&auto=format&fit=crop" alt="Pizza Hawaiana" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-amber-600">La Tropical</h3>
+                            <p class="mt-2 text-gray-600">La combinación perfecta de jamón jugoso y trocitos de piña dulce.</p>
+                        </div>
+                    </div>
+                    <!-- Otros Antojos -->
+                     <div class="bg-white rounded-2xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 reveal" style="transition-delay: 300ms;">
+                        <img src="https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?q=80&w=2070&auto=format&fit=crop" alt="Papas a la francesa" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-amber-600">Papas Crujientes</h3>
+                             <p class="mt-2 text-gray-600">El acompañante ideal para tu pizza, siempre doraditas.</p>
+                        </div>
+                    </div>
+                     <div class="bg-white rounded-2xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 reveal" style="transition-delay: 450ms;">
+                        <img src="https://images.pexels.com/photos/806880/pexels-photo-806880.jpeg?_gl=1*1yvgsjy*_ga*MTc3NjI4NTcwMS4xNzU4NTA3Njc3*_ga_8JE65Q40S6*czE3NTg1MDc2NzYkbzEkZzEkdDE3NTg1MDgzNTkkajU1JGwwJGgw" alt="Palomitas de Caramelo" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                             <h3 class="text-xl font-bold text-amber-600">Palomitas Acarameladas</h3>
+                             <p class="mt-2 text-gray-600">Un capricho dulce y crujiente para después de la pizza.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Horarios y Eventos -->
+                <div class="mt-20 bg-white p-10 rounded-2xl shadow-lg grid md:grid-cols-2 gap-10 items-center reveal">
+                    <div>
+                        <h3 class="text-4xl text-red-600 mb-4">¡Te Esperamos!</h3>
+                        <ul class="mt-4 space-y-3 text-gray-600 text-lg">
+                            <li class="flex items-center">
+                                <i data-lucide="calendar-days" class="w-6 h-6 mr-3 text-amber-500"></i>
+                                <strong>Miércoles a Lunes</strong>
+                            </li>
+                             <li class="flex items-center">
+                                <i data-lucide="clock" class="w-6 h-6 mr-3 text-amber-500"></i>
+                                <strong>11:00am a 9:00pm</strong>
+                            </li>
+                            <li class="flex items-center">
+                               <i data-lucide="calendar-off" class="w-6 h-6 mr-3 text-gray-400"></i>
+                                <strong>Martes:</strong> Cerrado por descanso
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-amber-50 p-8 rounded-xl border border-amber-200">
+                        <h3 class="text-4xl text-amber-600 mb-4">Tus Eventos</h3>
+                        <p class="text-gray-600">¡Llevamos nuestro sabor a tus fiestas! Cumpleaños, reuniones o cualquier celebración. Pregunta por nuestros paquetes y haz tu evento inolvidable.</p>
+                         <a href="#contacto" class="mt-6 inline-block bg-gray-800 hover:bg-gray-900 text-white font-bold py-2 px-6 rounded-full transition duration-300">Cotizar ahora</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonios -->
+        <section id="testimonios" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12 reveal">
+                    <h2 class="text-5xl text-red-600">Lo que dicen nuestros amigos</h2>
+                    <p class="mt-4 text-gray-600">¡Nos encanta leerlos! Su opinión nos ayuda a ser mejores cada día.</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Testimonio 1 -->
+                    <div class="bg-amber-50 border border-amber-100 p-8 rounded-2xl reveal">
+                        <p class="text-gray-600 italic">"¡La mejor pizza de Grajales, sin duda! La masa es perfecta y los ingredientes siempre frescos. Se nota el cariño que le ponen."</p>
+                        <p class="mt-4 font-bold text-amber-700">- Familia Pérez</p>
+                    </div>
+                    <!-- Testimonio 2 -->
+                    <div class="bg-amber-50 border border-amber-100 p-8 rounded-2xl reveal" style="transition-delay: 150ms;">
+                        <p class="text-gray-600 italic">"No solo las pizzas son deliciosas, ¡las palomitas de caramelo son una adicción! Siempre amables y el servicio es rápido."</p>
+                        <p class="mt-4 font-bold text-amber-700">- Ana L.</p>
+                    </div>
+                    <!-- Testimonio 3 -->
+                    <div class="bg-amber-50 border border-amber-100 p-8 rounded-2xl reveal" style="transition-delay: 300ms;">
+                         <p class="text-gray-600 italic">"Pedimos para una fiesta familiar y fue un éxito total. Excelente atención y todo llegó calientito. ¡Gracias, Pizzeria Clais!"</p>
+                        <p class="mt-4 font-bold text-amber-700">- Carlos M.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Mapa -->
+        <section id="ubicacion" class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12 reveal">
+                    <h2 class="text-5xl text-red-600">¡Encuéntranos Aquí!</h2>
+                    <p class="mt-4 text-gray-600 max-w-3xl mx-auto">Estamos en el corazón de Rafael Lara Grajales, listos para servirte una rebanada de felicidad.</p>
+                </div>
+                <div class="rounded-2xl shadow-2xl overflow-hidden reveal">
+                    <iframe 
+                        width="100%" 
+                        height="450" 
+                        style="border:0;" 
+                        loading="lazy" 
+                        allowfullscreen 
+                        referrerpolicy="no-referrer-when-downgrade" 
+                        src="https://www.openstreetmap.org/export/embed.html?bbox=-97.8031784,19.2260586,-97.7991784,19.2280586&layer=mapnik&marker=19.2270586,-97.8011784">
+                    </iframe>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Contacto y Formulario -->
+        <section id="contacto" class="pt-20 pb-20">
+            <div class="container mx-auto px-6">
+                <div class="bg-red-600 text-white rounded-2xl shadow-2xl p-8 md:p-12 lg:p-16 reveal overflow-hidden relative">
+                    <!-- Círculos decorativos -->
+                    <div class="absolute -top-10 -right-10 w-40 h-40 bg-white/10 rounded-full"></div>
+                    <div class="absolute -bottom-16 -left-10 w-48 h-48 bg-white/10 rounded-full"></div>
+
+                    <div class="grid lg:grid-cols-2 gap-12 items-center relative z-10">
+                        <!-- Información de contacto -->
+                        <div>
+                            <h2 class="text-5xl mb-4">¡Hablemos!</h2>
+                            <p class="mb-8 max-w-lg">
+                                Síguenos en redes para ver nuestras delicias del día. Y si quieres ofertas exclusivas, déjanos tu correo. ¡Prometemos no mandar spam, solo cosas ricas!
+                            </p>
+                            <div class="space-y-6">
+                                <a href="https://wa.me/5210008422257" target="_blank" class="flex items-center group">
+                                    <div class="bg-white/20 p-3 rounded-full mr-4 group-hover:bg-white/30 transition-colors">
+                                        <i data-lucide="message-circle" class="w-6 h-6"></i>
+                                    </div>
+                                    <div>
+                                        <p class="font-bold text-lg">Pide por WhatsApp</p>
+                                        <p class="group-hover:underline">000 842 2257</p>
+                                    </div>
+                                </a>
+                                <div class="flex items-center group cursor-pointer">
+                                    <div class="bg-white/20 p-3 rounded-full mr-4 group-hover:bg-white/30 transition-colors">
+                                        <i data-lucide="facebook" class="w-6 h-6"></i>
+                                    </div>
+                                    <div>
+                                        <p class="font-bold text-lg">Síguenos la pista</p>
+                                        <p class="group-hover:underline">/PizzeriaClais</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Formulario -->
+                        <div class="bg-white text-gray-800 p-8 rounded-xl shadow-lg">
+                            <h3 class="text-2xl mb-1 text-red-600">¡Quiero Promos!</h3>
+                            <p class="text-gray-600 mb-6">Únete al club de amigos de Clais.</p>
+                            <form id="promo-form">
+                                <div class="mb-4">
+                                    <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Nombre</label>
+                                    <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-red-500 focus:border-red-500 transition-colors" placeholder="¿Cómo te llamas?">
+                                </div>
+                                <div class="mb-6">
+                                    <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Correo Electrónico</label>
+                                    <input type="email" id="email" name="email" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-red-500 focus:border-red-500 transition-colors" placeholder="tu.correo@ejemplo.com">
+                                </div>
+                                <button type="submit" class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-md transition duration-300 transform hover:scale-105 shadow-md">
+                                    ¡Apúntame!
+                                </button>
+                            </form>
+                            <div id="form-message" class="mt-4 text-center h-5"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-10">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-3xl mb-2 font-handwriting text-red-500">Pizzeria Clais</p>
+            <p class="text-gray-400">Hecho con cariño en Rafael Lara Grajales, Puebla.</p>
+            <p class="text-gray-400 mt-4 text-sm">&copy; <span id="year"></span> Pizzeria Clais. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+
+    <script>
+        // Inicializar iconos Lucide
+        lucide.createIcons();
+
+        // Lógica del Menú Móvil
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Actualizar año del footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Lógica para mostrar elementos con scroll (Intersection Observer)
+        const revealElements = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+        revealElements.forEach(el => observer.observe(el));
+
+        // Lógica del Formulario
+        const promoForm = document.getElementById('promo-form');
+        const formMessage = document.getElementById('form-message');
+        promoForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            if (email && email.includes('@')) {
+                formMessage.textContent = '¡Listo! Bienvenido al club.';
+                formMessage.className = 'mt-4 text-center h-5 text-green-700 font-semibold';
+                promoForm.reset();
+            } else {
+                formMessage.textContent = 'Parece que ese correo no es válido.';
+                formMessage.className = 'mt-4 text-center h-5 text-red-600 font-semibold';
+            }
+            setTimeout(() => {
+                formMessage.textContent = '';
+            }, 5000);
+        });
+    </script>
+
+</body>
+</html>
+
+
